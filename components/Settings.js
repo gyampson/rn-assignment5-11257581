@@ -8,9 +8,12 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+
+import { React, useState } from "react";
 
 const Settings = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <View style={styles.container}>
       <View style={styles.lang}>
@@ -35,7 +38,13 @@ const Settings = () => {
       </View>
       <View style={styles.footer}>
         <Text style={styles.txt3}>Theme</Text>
-        <Switch style={styles.switch} />
+        <Switch
+          style={styles.switch}
+          trackColor={{ false: "grey", true: " #ADF802" }}
+          thumbColor={isEnabled ? "white" : "white"}
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
       </View>
     </View>
   );
