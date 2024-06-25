@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import themeContext from "./themeContext";
 const profile = require("../assets/profile.png");
 const search = require("../assets/search.png");
 const Card = require("../assets/Card.png");
@@ -22,12 +23,17 @@ const grocery = require("../assets/grocery.png");
 const spotify = require("../assets/spotify.png");
 
 const HomeScreen = () => {
+  const theme = useContext(themeContext);
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+    >
       <View style={styles.header}>
         <Image source={profile} />
-        <Text style={styles.txt1}>Welcome Back</Text>
-        <Text style={styles.txt2}>Samson</Text>
+        <Text style={[styles.txt1, { color: theme.textColor }]}>
+          Welcome Back
+        </Text>
+        <Text style={[styles.txt2, { color: theme.textColor }]}>Samson</Text>
         <View style={styles.search1}>
           <Image source={search} style={styles.search} />
         </View>
@@ -52,13 +58,15 @@ const HomeScreen = () => {
         </View>
       </View>
       <View style={styles.Text2}>
-        <Text>Send</Text>
-        <Text>Recieve</Text>
-        <Text>Loan</Text>
-        <Text>Top Up</Text>
+        <Text style={{ color: theme.textColor }}>Send</Text>
+        <Text style={{ color: theme.textColor }}>Recieve</Text>
+        <Text style={{ color: theme.textColor }}>Loan</Text>
+        <Text style={{ color: theme.textColor }}>Top Up</Text>
       </View>
       <View style={styles.Text3}>
-        <Text style={styles.txt3}>Transaction</Text>
+        <Text style={[styles.txt3, { color: theme.textColor }]}>
+          Transaction
+        </Text>
         <Text style={styles.txt4}>Sell All</Text>
       </View>
       <ScrollView>

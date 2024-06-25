@@ -6,16 +6,22 @@ import {
   Pressable,
   TouchableHighlight,
   Button,
+  Appearance,
   TouchableOpacity,
 } from "react-native";
-
-import { React, useState } from "react";
+import { EventRegister } from "react-native-event-listeners";
+import themeContext from "./themeContext";
+import { React, useState, useContext } from "react";
 
 const Settings = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = useContext(themeContext);
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+    >
       <View style={styles.lang}>
         <Text style={styles.txt1}> Language</Text>
         <Text style={styles.txt2}> {">"} </Text>
@@ -42,8 +48,11 @@ const Settings = () => {
           style={styles.switch}
           trackColor={{ false: "grey", true: " #ADF802" }}
           thumbColor={isEnabled ? "white" : "white"}
-          onValueChange={toggleSwitch}
-          value={isEnabled}
+          onValueChange={(value) => {
+            setDarkMode(value);
+            EventRegister.emit("ChangeTheme", value);
+          }}
+          value={darkMode}
         />
       </View>
     </View>
