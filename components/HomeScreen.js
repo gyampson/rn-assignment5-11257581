@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     right: 70,
   },
   search1: {
-    backgroundColor: "rgb(211, 211, 211)",
+    backgroundColor: "rgb(224, 224, 224)",
     height: 50,
     width: 50,
     borderRadius: 30,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   send: {
-    backgroundColor: "rgb(211, 211, 211)",
+    backgroundColor: "rgb(224, 224, 224)",
     height: 50,
     width: 50,
     borderRadius: 30,
