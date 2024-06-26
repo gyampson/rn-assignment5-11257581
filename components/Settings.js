@@ -22,31 +22,42 @@ const Settings = () => {
     <View
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
-      <View style={styles.lang}>
-        <Text style={styles.txt1}> Language</Text>
+      <View style={[styles.lang, { backgroundColor: theme.backgroundColor }]}>
+        <Text style={[styles.txt1, { color: theme.textColor }]}> Language</Text>
         <Text style={styles.txt2}> {">"} </Text>
       </View>
-      <View style={styles.lang}>
-        <Text style={styles.txt1}>My Profile </Text>
+      <View style={[styles.lang, { backgroundColor: theme.backgroundColor }]}>
+        <Text style={[styles.txt1, { color: theme.textColor }]}>
+          My Profile{" "}
+        </Text>
         <Text style={styles.txt2}> {">"} </Text>
       </View>
-      <View style={styles.lang}>
-        <Text style={styles.txt1}> Contact Us </Text>
+      <View style={[styles.lang, { backgroundColor: theme.backgroundColor }]}>
+        <Text style={[styles.txt1, { color: theme.textColor }]}>
+          {" "}
+          Contact Us{" "}
+        </Text>
         <Text style={styles.txt2}> {">"} </Text>
       </View>
-      <View style={styles.lang}>
-        <Text style={styles.txt1}> Change Password</Text>
+      <View style={[styles.lang, { backgroundColor: theme.backgroundColor }]}>
+        <Text style={[styles.txt1, { color: theme.textColor }]}>
+          {" "}
+          Change Password
+        </Text>
         <Text style={styles.txt2}> {">"} </Text>
       </View>
-      <View style={styles.lang}>
-        <Text style={styles.txt1}> Privacy Policy</Text>
+      <View style={[styles.lang, { backgroundColor: theme.backgroundColor }]}>
+        <Text style={[styles.txt1, { color: theme.textColor }]}>
+          {" "}
+          Privacy Policy
+        </Text>
         <Text style={styles.txt2}> {">"} </Text>
       </View>
       <View style={styles.footer}>
-        <Text style={styles.txt3}>Theme</Text>
+        <Text style={[styles.txt3, { color: theme.textColor }]}>Theme</Text>
         <Switch
           style={styles.switch}
-          trackColor={{ false: "grey", true: " #ADF802" }}
+          trackColor={{ false: "grey", true: " " }}
           thumbColor={isEnabled ? "white" : "white"}
           onValueChange={(value) => {
             setDarkMode(value);

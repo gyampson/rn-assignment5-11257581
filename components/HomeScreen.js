@@ -24,18 +24,20 @@ const spotify = require("../assets/spotify.png");
 
 const HomeScreen = () => {
   const theme = useContext(themeContext);
+
   return (
     <SafeAreaView
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
       <View style={styles.header}>
         <Image source={profile} />
-        <Text style={[styles.txt1, { color: theme.textColor }]}>
-          Welcome Back
-        </Text>
+        <Text style={styles.txt1}>Welcome back,</Text>
         <Text style={[styles.txt2, { color: theme.textColor }]}>Samson</Text>
-        <View style={styles.search1}>
-          <Image source={search} style={styles.search} />
+        <View style={[styles.search1, { backgroundColor: theme.theme }]}>
+          <Image
+            source={search}
+            style={[styles.search, { tintColor: theme.tintColor }]}
+          />
         </View>
       </View>
 
@@ -43,21 +45,21 @@ const HomeScreen = () => {
         <Image source={Card} />
       </View>
       <View style={styles.icons}>
-        <View style={styles.send}>
-          <Image source={send} />
+        <View style={[styles.send, { backgroundColor: theme.theme }]}>
+          <Image source={send} style={{ tintColor: theme.tintColor }} />
         </View>
 
-        <View style={styles.send}>
-          <Image source={recieve} />
+        <View style={[styles.send, { backgroundColor: theme.theme }]}>
+          <Image source={recieve} style={{ tintColor: theme.tintColor }} />
         </View>
-        <View style={styles.send}>
-          <Image source={loan} />
+        <View style={[styles.send, { backgroundColor: theme.theme }]}>
+          <Image source={loan} style={{ tintColor: theme.tintColor }} />
         </View>
-        <View style={styles.send}>
-          <Image source={topUp} />
+        <View style={[styles.send, { backgroundColor: theme.theme }]}>
+          <Image source={topUp} style={{ tintColor: theme.tintColor }} />
         </View>
       </View>
-      <View style={styles.Text2}>
+      <View style={[styles.Text2, { backgroundColor: theme.backgroundColor }]}>
         <Text style={{ color: theme.textColor }}>Send</Text>
         <Text style={{ color: theme.textColor }}>Recieve</Text>
         <Text style={{ color: theme.textColor }}>Loan</Text>
@@ -70,51 +72,83 @@ const HomeScreen = () => {
         <Text style={styles.txt4}>Sell All</Text>
       </View>
       <ScrollView>
-        <View style={styles.Transaction}>
-          <View style={styles.send}>
-            <Image source={apple} />
+        <View
+          style={[
+            styles.Transaction,
+            { backgroundColor: theme.backgroundColor },
+          ]}
+        >
+          <View style={[styles.send, { backgroundColor: theme.theme }]}>
+            <Image source={apple} style={{ tintColor: theme.tintColor }} />
           </View>
 
-          <Text style={styles.trans1}>apple store</Text>
-          <Text style={styles.trans2}>entertainment</Text>
-          <Text style={styles.trans3}>-$5,99</Text>
+          <Text style={[styles.trans1, { color: theme.textColor }]}>
+            Apple store
+          </Text>
+          <Text style={styles.trans2}>Entertainment</Text>
+          <Text style={[styles.trans3, { color: theme.textColor }]}>
+            -$5,99
+          </Text>
         </View>
-        <View style={styles.Transaction}>
-          <View style={styles.send}>
+        <View
+          style={[
+            styles.Transaction,
+            { backgroundColor: theme.backgroundColor },
+          ]}
+        >
+          <View style={[styles.send, { backgroundColor: theme.theme }]}>
             <Image source={spotify} />
           </View>
 
-          <Text style={styles.trans1}>Spotify</Text>
-          <Text style={styles.trans2}>Music</Text>
-          <Text style={styles.trans3}>-$5,99</Text>
+          <Text style={[styles.trans11, { color: theme.textColor }]}>
+            Spotify
+          </Text>
+          <Text style={styles.trans22}>Music</Text>
+          <Text style={[styles.trans33, { color: theme.textColor }]}>
+            -$12,99
+          </Text>
         </View>
-        <View style={styles.Transaction}>
-          <View style={styles.send}>
-            <Image source={moneyTransfer} />
+        <View
+          style={[
+            styles.Transaction,
+            { backgroundColor: theme.backgroundColor },
+          ]}
+        >
+          <View style={[styles.send, { backgroundColor: theme.theme }]}>
+            <Image
+              source={moneyTransfer}
+              style={{ tintColor: theme.tintColor }}
+            />
           </View>
 
-          <Text style={styles.trans1}>Money Transfer</Text>
-          <Text style={styles.trans2}>Transaction</Text>
-          <Text style={styles.trans3}>-$5,99</Text>
+          <Text style={[styles.transI, { color: theme.textColor }]}>
+            Money Transfer
+          </Text>
+          <Text style={styles.transII}>Transaction</Text>
+          <Text style={styles.transIII}>$300</Text>
         </View>
-        <View style={styles.Transaction}>
-          <View style={styles.send}>
+        <View
+          style={[
+            styles.Transaction,
+            { backgroundColor: theme.backgroundColor },
+          ]}
+        >
+          <View style={[styles.send, { backgroundColor: theme.theme }]}>
             <Image source={grocery} />
           </View>
 
-          <Text style={styles.trans1}>Grocery</Text>
-          <Text style={styles.trans2}>Food Stuffs</Text>
-          <Text style={styles.trans3}>-$5,99</Text>
+          <Text style={[styles.trans12, { color: theme.textColor }]}>
+            Grocery
+          </Text>
+          <Text style={styles.trans21}>Food Stuffs</Text>
+          <Text style={[styles.trans32, { color: theme.textColor }]}>-$88</Text>
         </View>
-        <View style={styles.Transaction}>
-          <View style={styles.send}>
-            <Image source={apple} />
-          </View>
-
-          <Text style={styles.trans1}>apple store</Text>
-          <Text style={styles.trans2}>entertainment</Text>
-          <Text style={styles.trans3}> -$5,99</Text>
-        </View>
+        <View
+          style={[
+            styles.Transaction,
+            { backgroundColor: theme.backgroundColor },
+          ]}
+        ></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -140,7 +174,14 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 30,
   },
+  txt1: {
+    textColor: "red",
+    left: 20,
+    color: "grey",
+  },
   txt2: {
+    fontSize: 25,
+    fontWeight: "bold",
     top: 20,
     right: 70,
   },
@@ -151,9 +192,9 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
-    left: 90,
+    left: 40,
   },
-  search: {},
+
   icons: {
     paddingTop: 30,
     flexDirection: "row",
@@ -198,8 +239,41 @@ const styles = StyleSheet.create({
 
     borderColor: "red",
   },
+  trans1: {
+    fontWeight: "bold",
+  },
   trans2: {
     top: 20,
     right: 80,
+    color: "grey",
+  },
+  trans11: {
+    right: 20,
+    fontWeight: "bold",
+  },
+  trans22: {
+    right: 96,
+    top: 25,
+    color: "grey",
+  },
+  transI: {
+    fontWeight: "bold",
+  },
+  transII: {
+    right: 105,
+    top: 25,
+    color: "grey",
+  },
+  transIII: {
+    color: "blue",
+  },
+  trans12: {
+    right: 20,
+    fontWeight: "bold",
+  },
+  trans21: {
+    right: 96,
+    top: 25,
+    color: "grey",
   },
 });
