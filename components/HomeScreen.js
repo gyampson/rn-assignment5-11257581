@@ -251,6 +251,9 @@ const styles = StyleSheet.create({
     right: 80,
     color: "grey",
   },
+  trans3: {
+    left: 30,
+  },
   trans11: {
     right: 20,
     fontWeight: "bold",
@@ -259,6 +262,9 @@ const styles = StyleSheet.create({
     right: 96,
     top: 25,
     color: "grey",
+  },
+  trans33: {
+    left: 30,
   },
   transI: {
     fontWeight: "bold",
@@ -270,6 +276,7 @@ const styles = StyleSheet.create({
   },
   transIII: {
     color: "blue",
+    left: 30,
   },
   trans12: {
     right: 20,
@@ -279,5 +286,8 @@ const styles = StyleSheet.create({
     right: 96,
     top: 25,
     color: "grey",
+  },
+  trans32: {
+    left: 30,
   },
 });
