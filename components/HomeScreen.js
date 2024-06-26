@@ -60,10 +60,10 @@ const HomeScreen = () => {
         </View>
       </View>
       <View style={[styles.Text2, { backgroundColor: theme.backgroundColor }]}>
-        <Text style={{ color: theme.textColor }}>Send</Text>
-        <Text style={{ color: theme.textColor }}>Recieve</Text>
-        <Text style={{ color: theme.textColor }}>Loan</Text>
-        <Text style={{ color: theme.textColor }}>Top Up</Text>
+        <Text style={styles.let}>Send</Text>
+        <Text style={styles.let}>Recieve</Text>
+        <Text style={styles.let}>Loan</Text>
+        <Text style={styles.let}>Top Up</Text>
       </View>
       <View style={styles.Text3}>
         <Text style={[styles.txt3, { color: theme.textColor }]}>
@@ -179,6 +179,9 @@ const styles = StyleSheet.create({
     left: 20,
     color: "grey",
   },
+  let: {
+    color: "grey",
+  },
   txt2: {
     fontSize: 25,
     fontWeight: "bold",
@@ -218,6 +221,7 @@ const styles = StyleSheet.create({
   Text3: {
     flexDirection: "row",
     paddingBottom: 20,
+    paddingLeft: 10,
   },
   txt4: {
     left: 180,

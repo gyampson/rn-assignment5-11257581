@@ -8,19 +8,10 @@ const theme = {
     textColor: "#000",
   },
   dark: {
-    theme: "purple",
-    backgroundColor: "#060721",
+    theme: "#313145",
+    backgroundColor: "1B1B31",
     textColor: "#fff",
     tintColor: "white",
-  },
-  highContrast: {
-    backgroundColor: "#f9f9f9",
-    textColor: "#000000",
-    // ... other styles
-  },
-  ocean: {
-    backgroundColor: "#c2e0f0",
-    textColor: "#333333",
   },
 };
 export default theme;
